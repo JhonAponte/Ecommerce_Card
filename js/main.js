@@ -1,4 +1,4 @@
-class products {
+class Product {
     constructor(photo, clothes, description, stars, price, discount) {
       this.photo = photo;
       this.clothes = clothes;
@@ -20,7 +20,7 @@ eventoBlock.addEventListener("click", RegistrarDatos);
 
 function RegistrarDatos(){
     const data = ObtenerDatosFormulario();
-    product = new products(data.photo, data.clothes, data.description, data.stars, data.price, data.discount);
+    product = new Product(data.photo, data.clothes, data.description, data.stars, data.price, data.discount);
     ActualizarHtml();
     LimpiarDatos();
 
