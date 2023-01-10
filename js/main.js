@@ -80,6 +80,10 @@ var item;
 
 var container = document.getElementById("contenedor");
 
+var selector_1 = document.getElementById("Foto");
+
+var selector_2 = document.getElementById("Categoria");
+
 const eventoBlock = document.getElementById("botones");
 
 eventoBlock.addEventListener("click", RegistrarDatos);
@@ -87,25 +91,46 @@ eventoBlock.addEventListener("click", RegistrarDatos);
 function RegistrarDatos(){
     const data = ObtenerDatosFormulario();
     listado.push(data);
-      ActualizarHtml();
-      LimpiarDatos();
+    ActualizarHtml();
+    LimpiarDatos();
 }
 
 function ObtenerDatosFormulario(){
     const inputs = document.querySelectorAll("#Formulario input");
     const FormData = {};
+
     for(const input of inputs){
         FormData[input.name] = input.value;
     }
+
+    const id_photo = document.querySelector('#imagen').selectedIndex;
+    const txt_photo = document.querySelector('#imagen').options;
+    const name_photo = document.querySelector('#imagen').name;
+
+    const id_clothes = document.querySelector('#clothes').selectedIndex;
+    const txt_clothes = document.querySelector('#clothes').options;
+    const name_clothes = document.querySelector('#clothes').name;
+
+    FormData[name_photo] = txt_photo[id_photo].text;
+    FormData[name_clothes] = txt_clothes[id_clothes].text;
+
     return FormData;
 }
 
 function ActualizarHtml(){
     var code = "";
+    var option_1 = "";
+    var option_2 = "";
     for(let index in listado){
         code += CodeHtml(index);
     }
+    
+    option_1 = ActualizarPrimerSelector();
+    option_2 = ActualizarSegundoSelector();
+
     container.innerHTML = code;
+    selector_1.innerHTML = option_1;
+    selector_2.innerHTML = option_2;
 }
 
 function CodeHtml(i){
@@ -123,7 +148,43 @@ function CodeHtml(i){
         </div>`;
     
         return portionHtml;
-    }
+}
+
+
+function ActualizarPrimerSelector(){
+    var portionHtml = `
+    <select name="photo" id="imagen">
+        <option value="" disabled selected hidden>Elige la imagen a mostrar</option>
+        <option value="Franela">image/franela.jpg</option>
+        <option value="Converse">image/converse.jpg</option>
+        <option value="Gorra">image/gorra.jpg</option>
+        <option value="Medias">image/medias.png</option>
+        <option value="Chaleco">image/chaleco.png</option>
+        <option value="Botas">image/botas.jpg</option>
+        <option value="Camisa">image/camisa.jpg</option>
+        <option value="Corbata">image/corbata.png</option>
+    </select>`;
+    
+        return portionHtml;
+}
+
+function ActualizarSegundoSelector(){
+    var portionHtml = `
+    <select name="clothes" id="clothes">
+        <option value="" disabled selected hidden>Elige la categoría</option>
+        <option value="Franela">Franela</option>
+        <option value="Converse">Converse</option>
+        <option value="Gorra">Gorra</option>
+        <option value="Medias">Medias</option>
+        <option value="Chaleco">Chaleco</option>
+        <option value="Botas">Botas</option>
+        <option value="Camisa">Camisa</option>
+        <option value="Corbata">Corbata</option>
+    </select>`;
+    
+        return portionHtml;
+}
+
 
 function LimpiarDatos(){
     const inputs = document.querySelectorAll("#Formulario input");
