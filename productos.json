@@ -1,0 +1,66 @@
+[
+    { 
+        "photo":"image/franela.jpg", 
+        "clothes":"Franela", 
+        "description":"Lorem ipsum dolor sit amet.", 
+        "stars":3, 
+        "price":"3.200 Bs", 
+        "discount": "3.550 Bs"
+    },
+    { 
+        "photo":"image/converse.jpg", 
+        "clothes":"Converse", 
+        "description":"Lorem ipsum dolor sit amet.", 
+        "stars":5, 
+        "price":"8.000 Bs", 
+        "discount": "7.000 Bs" 
+    },
+    { 
+        "photo":"image/gorra.jpg", 
+        "clothes":"Gorra", 
+        "description":"Lorem ipsum dolor sit amet.", 
+        "stars":2, 
+        "price":"3.000 Bs", 
+        "discount": "4.000 Bs" 
+    },
+    { 
+        "photo":"image/medias.png", 
+        "clothes":"Medias", 
+        "description":"Lorem ipsum dolor sit amet.", 
+        "stars":1, 
+        "price":"1.280 Bs", 
+        "discount": "1.600 Bs" 
+    },
+    { 
+        "photo":"image/chaleco.png", 
+        "clothes":"Chaleco", 
+        "description":"Lorem ipsum dolor sit amet.", 
+        "stars":4, 
+        "price":"800 Bs", 
+        "discount": "1.000 Bs"
+    },
+    { 
+        "photo":"image/botas.jpg", 
+        "clothes":"Botas", 
+        "description":"Lorem ipsum dolor sit amet.", 
+        "stars":3, 
+        "price":"2.800 Bs", 
+        "discount": "3.200 Bs"
+    },
+    { 
+        "photo":"image/camisa.jpg", 
+        "clothes":"Camisa", 
+        "description":"Lorem ipsum dolor sit amet.", 
+        "stars":5, 
+        "price":"2450 Bs", 
+        "discount": "3100 Bs" 
+    },
+    { 
+        "photo":"image/corbata.png", 
+        "clothes":"Corbata", 
+        "description":"Lorem ipsum dolor sit amet.", 
+        "stars":4, 
+        "price":"800 Bs", 
+        "discount": "950 Bs" 
+    }
+]
