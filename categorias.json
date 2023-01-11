@@ -1,12 +1,14 @@
-{ 
-    "categoria": [
-        "Franela", 
-        "Converse", 
-        "Gorra", 
-        "Medias", 
-        "Chaleco", 
-        "Botas", 
-        "Camisa", 
-        "Corbata"]
-}
+[
+    { 
+        "categoria": [
+            "Franela", 
+            "Converse", 
+            "Gorra", 
+            "Medias", 
+            "Chaleco", 
+            "Botas", 
+            "Camisa", 
+            "Corbata"]
+    }
+]
 
