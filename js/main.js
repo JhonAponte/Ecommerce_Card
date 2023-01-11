@@ -9,84 +9,92 @@ class Product {
     }
   }
 
-var listado = [
-    { 
-        photo:'image/franela.jpg', 
-        clothes:"Franela", 
-        description:"Lorem ipsum dolor sit amet.", 
-        stars:3, 
-        price:"3.200 Bs", 
-        discount: "3.550 Bs"
-    },
-    { 
-        photo:'image/converse.jpg', 
-        clothes:"Converse", 
-        description:"Lorem ipsum dolor sit amet.", 
-        stars:5, 
-        price:"8.000 Bs", 
-        discount: "7.000 Bs" 
-    },
-    { 
-        photo:'image/gorra.jpg', 
-        clothes:"Gorra", 
-        description:"Lorem ipsum dolor sit amet.", 
-        stars:2, 
-        price:"3.000 Bs", 
-        discount: "4.000 Bs" 
-    },
-    { 
-        photo:'image/medias.png', 
-        clothes:"Medias", 
-        description:"Lorem ipsum dolor sit amet.", 
-        stars:1, 
-        price:"1.280 Bs", 
-        discount: "1.600 Bs" 
-    },
-    { 
-        photo:'image/chaleco.png', 
-        clothes:"Chaleco", 
-        description:"Lorem ipsum dolor sit amet.", 
-        stars:4, 
-        price:"800 Bs", 
-        discount: "1.000 Bs"
-    },
-    { 
-        photo:'image/botas.jpg', 
-        clothes:"Botas", 
-        description:"Lorem ipsum dolor sit amet.", 
-        stars:3, 
-        price:"2.800 Bs", 
-        discount: "3.200 Bs"
-    },
-    { 
-        photo:'image/camisa.jpg', 
-        clothes:"Camisa", 
-        description:"Lorem ipsum dolor sit amet.", 
-        stars:5, 
-        price:"2450 Bs", 
-        discount: "3100 Bs" 
-    },
-    { 
-        photo:'image/corbata.png', 
-        clothes:"Corbata", 
-        description:"Lorem ipsum dolor sit amet.", 
-        stars:4, 
-        price:"800 Bs", 
-        discount: "950 Bs" 
-    }
-];
+
+var listado;
+// var listado = [
+//     { 
+//         photo:'image/franela.jpg', 
+//         clothes:"Franela", 
+//         description:"Lorem ipsum dolor sit amet.", 
+//         stars:3, 
+//         price:"3.200 Bs", 
+//         discount: "3.550 Bs"
+//     },
+//     { 
+//         photo:'image/converse.jpg', 
+//         clothes:"Converse", 
+//         description:"Lorem ipsum dolor sit amet.", 
+//         stars:5, 
+//         price:"8.000 Bs", 
+//         discount: "7.000 Bs" 
+//     },
+//     { 
+//         photo:'image/gorra.jpg', 
+//         clothes:"Gorra", 
+//         description:"Lorem ipsum dolor sit amet.", 
+//         stars:2, 
+//         price:"3.000 Bs", 
+//         discount: "4.000 Bs" 
+//     },
+//     { 
+//         photo:'image/medias.png', 
+//         clothes:"Medias", 
+//         description:"Lorem ipsum dolor sit amet.", 
+//         stars:1, 
+//         price:"1.280 Bs", 
+//         discount: "1.600 Bs" 
+//     },
+//     { 
+//         photo:'image/chaleco.png', 
+//         clothes:"Chaleco", 
+//         description:"Lorem ipsum dolor sit amet.", 
+//         stars:4, 
+//         price:"800 Bs", 
+//         discount: "1.000 Bs"
+//     },
+//     { 
+//         photo:'image/botas.jpg', 
+//         clothes:"Botas", 
+//         description:"Lorem ipsum dolor sit amet.", 
+//         stars:3, 
+//         price:"2.800 Bs", 
+//         discount: "3.200 Bs"
+//     },
+//     { 
+//         photo:'image/camisa.jpg', 
+//         clothes:"Camisa", 
+//         description:"Lorem ipsum dolor sit amet.", 
+//         stars:5, 
+//         price:"2450 Bs", 
+//         discount: "3100 Bs" 
+//     },
+//     { 
+//         photo:'image/corbata.png', 
+//         clothes:"Corbata", 
+//         description:"Lorem ipsum dolor sit amet.", 
+//         stars:4, 
+//         price:"800 Bs", 
+//         discount: "950 Bs" 
+//     }
+// ];
 
 var item;
 
 var container = document.getElementById("contenedor");
 
-var selector_1 = document.getElementById("Foto");
+var selector_1 = document.getElementById("imagen");
 
-var selector_2 = document.getElementById("Categoria");
+var selector_2 = document.getElementById("clothes");
 
 const eventoBlock = document.getElementById("botones");
 
-eventoBlock.addEventListener("click", RegistrarDatos);
+//eventoBlock.addEventListener("click", RegistrarDatos);
+
+eventoBlock.addEventListener("click", () => {
+    RegistrarDatos();
+    selector_1.selectedIndex = 0;
+    selector_2.selectedIndex = 0;
+});
 
 function RegistrarDatos(){
     const data = ObtenerDatosFormulario();
@@ -94,6 +102,7 @@ function RegistrarDatos(){
     ActualizarHtml();
     LimpiarDatos();
 }
+
 
 function ObtenerDatosFormulario(){
     const inputs = document.querySelectorAll("#Formulario input");
@@ -119,18 +128,10 @@ function ObtenerDatosFormulario(){
 
 function ActualizarHtml(){
     var code = "";
-    var option_1 = "";
-    var option_2 = "";
     for(let index in listado){
         code += CodeHtml(index);
     }
-    
-    option_1 = ActualizarPrimerSelector();
-    option_2 = ActualizarSegundoSelector();
-
     container.innerHTML = code;
-    selector_1.innerHTML = option_1;
-    selector_2.innerHTML = option_2;
 }
 
 function CodeHtml(i){
@@ -149,42 +150,6 @@ function CodeHtml(i){
     
         return portionHtml;
 }
-
-
-function ActualizarPrimerSelector(){
-    var portionHtml = `
-    <select name="photo" id="imagen">
-        <option value="" disabled selected hidden>Elige la imagen a mostrar</option>
-        <option value="Franela">image/franela.jpg</option>
-        <option value="Converse">image/converse.jpg</option>
-        <option value="Gorra">image/gorra.jpg</option>
-        <option value="Medias">image/medias.png</option>
-        <option value="Chaleco">image/chaleco.png</option>
-        <option value="Botas">image/botas.jpg</option>
-        <option value="Camisa">image/camisa.jpg</option>
-        <option value="Corbata">image/corbata.png</option>
-    </select>`;
-    
-        return portionHtml;
-}
-
-function ActualizarSegundoSelector(){
-    var portionHtml = `
-    <select name="clothes" id="clothes">
-        <option value="" disabled selected hidden>Elige la categoría</option>
-        <option value="Franela">Franela</option>
-        <option value="Converse">Converse</option>
-        <option value="Gorra">Gorra</option>
-        <option value="Medias">Medias</option>
-        <option value="Chaleco">Chaleco</option>
-        <option value="Botas">Botas</option>
-        <option value="Camisa">Camisa</option>
-        <option value="Corbata">Corbata</option>
-    </select>`;
-    
-        return portionHtml;
-}
-
 
 function LimpiarDatos(){
     const inputs = document.querySelectorAll("#Formulario input");
@@ -208,4 +173,19 @@ function Qualifier(stars){
     return qualification;
 }
 
-document.addEventListener("DOMContentLoaded", ActualizarHtml);
+document.addEventListener("DOMContentLoaded", GetProduct);
+
+function GetProduct() {
+    const xhttp = new XMLHttpRequest();
+    const url = "https://raw.githubusercontent.com/JhonAponte/Ecommerce_Card/json/productos.json";
+    
+    xhttp.onreadystatechange = function(){
+        if(this.readyState == 4 && this.status == 200){
+            listado = JSON.parse(this.responseText);
+            ActualizarHtml();
+        }
+    }
+
+    xhttp.open("GET", url);
+    xhttp.send();
+  }
