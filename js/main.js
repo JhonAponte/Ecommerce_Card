@@ -11,74 +11,10 @@ class Product {
 
 
 var listado;
+
 var categoria;
+
 var tipo;
-// var listado = [
-//     { 
-//         photo:'image/franela.jpg', 
-//         clothes:"Franela", 
-//         description:"Lorem ipsum dolor sit amet.", 
-//         stars:3, 
-//         price:"3.200 Bs", 
-//         discount: "3.550 Bs"
-//     },
-//     { 
-//         photo:'image/converse.jpg', 
-//         clothes:"Converse", 
-//         description:"Lorem ipsum dolor sit amet.", 
-//         stars:5, 
-//         price:"8.000 Bs", 
-//         discount: "7.000 Bs" 
-//     },
-//     { 
-//         photo:'image/gorra.jpg', 
-//         clothes:"Gorra", 
-//         description:"Lorem ipsum dolor sit amet.", 
-//         stars:2, 
-//         price:"3.000 Bs", 
-//         discount: "4.000 Bs" 
-//     },
-//     { 
-//         photo:'image/medias.png', 
-//         clothes:"Medias", 
-//         description:"Lorem ipsum dolor sit amet.", 
-//         stars:1, 
-//         price:"1.280 Bs", 
-//         discount: "1.600 Bs" 
-//     },
-//     { 
-//         photo:'image/chaleco.png', 
-//         clothes:"Chaleco", 
-//         description:"Lorem ipsum dolor sit amet.", 
-//         stars:4, 
-//         price:"800 Bs", 
-//         discount: "1.000 Bs"
-//     },
-//     { 
-//         photo:'image/botas.jpg', 
-//         clothes:"Botas", 
-//         description:"Lorem ipsum dolor sit amet.", 
-//         stars:3, 
-//         price:"2.800 Bs", 
-//         discount: "3.200 Bs"
-//     },
-//     { 
-//         photo:'image/camisa.jpg', 
-//         clothes:"Camisa", 
-//         description:"Lorem ipsum dolor sit amet.", 
-//         stars:5, 
-//         price:"2450 Bs", 
-//         discount: "3100 Bs" 
-//     },
-//     { 
-//         photo:'image/corbata.png', 
-//         clothes:"Corbata", 
-//         description:"Lorem ipsum dolor sit amet.", 
-//         stars:4, 
-//         price:"800 Bs", 
-//         discount: "950 Bs" 
-//     }
-// ];
 
 var item;
 
@@ -88,8 +24,6 @@ var selector_1 = document.getElementById("imagen");
 
 const eventoBlock = document.getElementById("botones");
 
-eventoBlock.addEventListener("click", RegistrarDatos);
-
 eventoBlock.addEventListener("click", () => {
     RegistrarDatos();
     selector_1.selectedIndex = 0;
@@ -98,18 +32,14 @@ eventoBlock.addEventListener("click", () => {
 function RegistrarDatos(){
     const data = ObtenerDatosFormulario();
     listado.push(data);
+    console.log(listado);
     ActualizarHtml();
     LimpiarDatos();
 }
 
-
 function ObtenerDatosFormulario(){
     const inputs = document.querySelectorAll("#Formulario input");
     const FormData = {};
-
-    for(const input of inputs){
-        FormData[input.name] = input.value;
-    }
 
     const id_photo = document.querySelector('#imagen').selectedIndex;
     const txt_photo = document.querySelector('#imagen').options;
@@ -117,6 +47,11 @@ function ObtenerDatosFormulario(){
 
     FormData[name_photo] = txt_photo[id_photo].text;
 
+    for(const input of inputs){
+        FormData[input.name] = input.value;
+    }
+
+    FormData.clothes=tipo[id_photo-1];
     return FormData;
 }
 
@@ -129,11 +64,11 @@ function ActualizarHtml(){
 }
 
 function CodeHtml(i){
-    item = new Product(listado[i].photo, tipo[i], listado[i].description, listado[i].stars, listado[i].price, listado[i].discount);
+    item = new Product(listado[i].photo, listado[i].clothes, listado[i].description, listado[i].stars, listado[i].price, listado[i].discount);
     var portionHtml = `
         <div class="container">
             <img src= "${item.photo}" alt="${item.clothes}" class="card-img">
-            <h1 class="name">${tipo[i]}</h1>
+            <h1 class="name">${item.clothes}</h1>
             <p class="description">${item.description}</p>
             <div class="star">${Qualifier(item.stars)}</div>
             <br>
@@ -168,18 +103,9 @@ function Qualifier(stars){
 }
 
 
-
-
-
-
-
-
-
-
-
 document.addEventListener("DOMContentLoaded", () => {
-    GetProduct();
     GetCategory();
+    GetProduct();
 });
 
 //document.addEventListener("DOMContentLoaded", GetProduct);
@@ -190,13 +116,18 @@ function GetProduct() {
     
     xhttp.onload = function() {
         listado = JSON.parse(this.responseText);
+        for (let i = 0; i < 8; i++) {
+            listado[i].clothes = tipo[i];
+            
+        }
+        ActualizarHtml();
         }
     
     xhttp.open("GET", url);
     xhttp.send();
   }
 
-  function GetCategory() {
+function GetCategory() {
     const xhttp = new XMLHttpRequest();
     const url = "https://raw.githubusercontent.com/JhonAponte/Ecommerce_Card/json/categorias.json";
 
@@ -205,7 +136,6 @@ function GetProduct() {
         for (const parametro in categoria) {
             tipo = categoria[parametro];
           }
-        ActualizarHtml();
         }
 
     xhttp.open("GET", url);
