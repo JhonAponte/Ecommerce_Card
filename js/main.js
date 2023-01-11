@@ -11,6 +11,8 @@ class Product {
 
 
 var listado;
+var categoria;
+var tipo;
 // var listado = [
 //     { 
 //         photo:'image/franela.jpg', 
@@ -84,16 +86,13 @@ var container = document.getElementById("contenedor");
 
 var selector_1 = document.getElementById("imagen");
 
-var selector_2 = document.getElementById("clothes");
-
 const eventoBlock = document.getElementById("botones");
 
-//eventoBlock.addEventListener("click", RegistrarDatos);
+eventoBlock.addEventListener("click", RegistrarDatos);
 
 eventoBlock.addEventListener("click", () => {
     RegistrarDatos();
     selector_1.selectedIndex = 0;
-    selector_2.selectedIndex = 0;
 });
 
 function RegistrarDatos(){
@@ -116,12 +115,7 @@ function ObtenerDatosFormulario(){
     const txt_photo = document.querySelector('#imagen').options;
     const name_photo = document.querySelector('#imagen').name;
 
-    const id_clothes = document.querySelector('#clothes').selectedIndex;
-    const txt_clothes = document.querySelector('#clothes').options;
-    const name_clothes = document.querySelector('#clothes').name;
-
     FormData[name_photo] = txt_photo[id_photo].text;
-    FormData[name_clothes] = txt_clothes[id_clothes].text;
 
     return FormData;
 }
@@ -135,11 +129,11 @@ function ActualizarHtml(){
 }
 
 function CodeHtml(i){
-    item = new Product(listado[i].photo, listado[i].clothes, listado[i].description, listado[i].stars, listado[i].price, listado[i].discount);
+    item = new Product(listado[i].photo, tipo[i], listado[i].description, listado[i].stars, listado[i].price, listado[i].discount);
     var portionHtml = `
         <div class="container">
             <img src= "${item.photo}" alt="${item.clothes}" class="card-img">
-            <h1 class="name">${item.clothes}</h1>
+            <h1 class="name">${tipo[i]}</h1>
             <p class="description">${item.description}</p>
             <div class="star">${Qualifier(item.stars)}</div>
             <br>
@@ -173,18 +167,46 @@ function Qualifier(stars){
     return qualification;
 }
 
-document.addEventListener("DOMContentLoaded", GetProduct);
+
+
+
+
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    GetProduct();
+    GetCategory();
+});
+
+//document.addEventListener("DOMContentLoaded", GetProduct);
 
 function GetProduct() {
     const xhttp = new XMLHttpRequest();
     const url = "https://raw.githubusercontent.com/JhonAponte/Ecommerce_Card/json/productos.json";
     
-    xhttp.onreadystatechange = function(){
-        if(this.readyState == 4 && this.status == 200){
-            listado = JSON.parse(this.responseText);
-            ActualizarHtml();
+    xhttp.onload = function() {
+        listado = JSON.parse(this.responseText);
         }
-    }
+    
+    xhttp.open("GET", url);
+    xhttp.send();
+  }
+
+  function GetCategory() {
+    const xhttp = new XMLHttpRequest();
+    const url = "https://raw.githubusercontent.com/JhonAponte/Ecommerce_Card/json/categorias.json";
+
+    xhttp.onload = function() {
+        categoria = JSON.parse(this.responseText);
+        for (const parametro in categoria) {
+            tipo = categoria[parametro];
+          }
+        ActualizarHtml();
+        }
 
     xhttp.open("GET", url);
     xhttp.send();

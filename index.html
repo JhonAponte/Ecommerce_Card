@@ -14,14 +14,37 @@
 
 <body>
     <div class="wrapper-flex" id="contenedor">
+      
     </div>
     <br>
     <section class="form-register" id="Formulario">
       <h4>Ingrese un nuevo producto</h4>
 
       <label for="fotografía" id="Foto"></label>
+      <select name="photo" id="imagen">
+        <option value="" disabled selected hidden>Elige la imagen a mostrar</option>
+        <option value="Franela">image/franela.jpg</option>
+        <option value="Converse">image/converse.jpg</option>
+        <option value="Gorra">image/gorra.jpg</option>
+        <option value="Medias">image/medias.png</option>
+        <option value="Chaleco">image/chaleco.png</option>
+        <option value="Botas">image/botas.jpg</option>
+        <option value="Camisa">image/camisa.jpg</option>
+        <option value="Corbata">image/corbata.png</option>
+      </select>
 
-      <label for="categoria" id="Categoria"></label>
+      <!-- <label for="categoria" id="Categoria"></label>
+      <select name="clothes" id="clothes">
+        <option value="" disabled selected hidden>Elige la categoría</option>
+        <option value="Franela">Franela</option>
+        <option value="Converse">Converse</option>
+        <option value="Gorra">Gorra</option>
+        <option value="Medias">Medias</option>
+        <option value="Chaleco">Chaleco</option>
+        <option value="Botas">Botas</option>
+        <option value="Camisa">Camisa</option>
+        <option value="Corbata">Corbata</option>
+      </select> -->
 
       <input class="controls" type="text" name="description" id="description" maxlength="35" placeholder="Descripción del nuevo producto">
       <input class="controls" type="number" name="stars" id="stars" min="1" max="5" placeholder="Califique el nuevo producto">
