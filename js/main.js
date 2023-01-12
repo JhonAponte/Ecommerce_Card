@@ -103,41 +103,70 @@ function Qualifier(stars){
 }
 
 
-document.addEventListener("DOMContentLoaded", () => {
-    GetCategory();
-    GetProduct();
-});
+document.addEventListener("DOMContentLoaded", function(evento) {
+
+    Promise.all([
+        fetch("https://raw.githubusercontent.com/JhonAponte/Ecommerce_Card/json/categorias.json"),
+        fetch("https://raw.githubusercontent.com/JhonAponte/Ecommerce_Card/json/productos.json")
+    ]).then(function (responses) {
+        return Promise.all(responses.map(function (response) {
+            return response.json();
+        }));
+    }).then(function (data) {
+        categoria = data[0];
+        listado = data[1];
+        for (const parametro in categoria) {
+            tipo = categoria[parametro];
+        }
+        for (let i = 0; i < 8; i++) {
+            listado[i].clothes = tipo[i];
+        }
+    }).then(function() {
+        ActualizarHtml();
+    }).catch(function (error) {
+        console.log(error);
+    });
+
+    //GetCategory();
+    //GetProduct();
+
+ });
 
 //document.addEventListener("DOMContentLoaded", GetProduct);
 
-function GetProduct() {
-    const xhttp = new XMLHttpRequest();
-    const url = "https://raw.githubusercontent.com/JhonAponte/Ecommerce_Card/json/productos.json";
+// function GetProduct() {
+//     const xhttp = new XMLHttpRequest();
+//     const url = "https://raw.githubusercontent.com/JhonAponte/Ecommerce_Card/json/productos.json";
     
-    xhttp.onload = function() {
-        listado = JSON.parse(this.responseText);
-        for (let i = 0; i < 8; i++) {
-            listado[i].clothes = tipo[i];
+//     xhttp.onload = function() {
+//         console.log("Llegaron los productos");
+//         listado = JSON.parse(this.responseText);
+//         for (let i = 0; i < 8; i++) {
+//             listado[i].clothes = tipo[i];
             
-        }
-        ActualizarHtml();
-        }
+//         }
+//         console.log(listado);
+//         ActualizarHtml();
+//         }
     
-    xhttp.open("GET", url);
-    xhttp.send();
-  }
+//     xhttp.open("GET", url);
+//     xhttp.send();
+//   }
 
-function GetCategory() {
-    const xhttp = new XMLHttpRequest();
-    const url = "https://raw.githubusercontent.com/JhonAponte/Ecommerce_Card/json/categorias.json";
+// function GetCategory() {
+//     const xhttp = new XMLHttpRequest();
+//     const url = "https://raw.githubusercontent.com/JhonAponte/Ecommerce_Card/json/categorias.json";
 
-    xhttp.onload = function() {
-        categoria = JSON.parse(this.responseText);
-        for (const parametro in categoria) {
-            tipo = categoria[parametro];
-          }
-        }
+//     xhttp.onload = function() {
+//         console.log("Llegaron las categorías");
+//         categoria = JSON.parse(this.responseText);
+//         for (const parametro in categoria) {
+//             tipo = categoria[parametro];
+//           }
+//         GetProduct();
+//         }
 
-    xhttp.open("GET", url);
-    xhttp.send();
-  }
+//     xhttp.open("GET", url);
+//     xhttp.send();
+//   }
+
