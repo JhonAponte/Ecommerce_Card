@@ -9,7 +9,6 @@ class Product {
     }
   }
 
-
 var listado;
 
 var categoria;
@@ -102,34 +101,41 @@ function Qualifier(stars){
     return qualification;
 }
 
-
 async function recibirCategorias(){
-    const categorias_obtenidas = await fetch("https://raw.githubusercontent.com/JhonAponte/Ecommerce_Card/json/categorias.json");
-    const categorias = await categorias_obtenidas.json();
-    return categorias;
+    try {
+        const categorias_obtenidas = await fetch("https://raw.githubusercontent.com/JhonAponte/Ecommerce_Card/json/categorias.json");
+        const categorias = await categorias_obtenidas.json();
+        return categorias;
+    } catch(err) {
+        alert(err);
+    }
 }
 
 async function recibirProductos(){
-    const productos_obtenidos = await fetch("https://raw.githubusercontent.com/JhonAponte/Ecommerce_Card/json/productos.json");
-    const productos = await productos_obtenidos.json();
-    return productos;
+    try {
+        const productos_obtenidos = await fetch("https://raw.githubusercontent.com/JhonAponte/Ecommerce_Card/json/productos.json");
+        const productos = await productos_obtenidos.json();
+        return productos;
+    } catch(err) {
+        alert(err);
+    }
 }
 
 async function cargaInicialHTML(){
-    const todo = await Promise.all([recibirCategorias(),recibirProductos()]);
-
-    categoria = todo[0];
-    listado = todo[1];
-
-    for (const parametro in categoria) {
-        tipo = categoria[parametro];
+    try {
+        const todo = await Promise.all([recibirCategorias(),recibirProductos()]);
+        categoria = todo[0];
+        listado = todo[1];
+        for (const parametro in categoria) {
+            tipo = categoria[parametro];
+        }
+        for (let i = 0; i < 8; i++) {
+            listado[i].clothes = tipo[i];
+        }
+        ActualizarHtml();
+    } catch(err) {
+        alert(err);
     }
-
-    for (let i = 0; i < 8; i++) {
-        listado[i].clothes = tipo[i];
-    }
-
-    ActualizarHtml();
 }
 
 document.addEventListener("DOMContentLoaded", cargaInicialHTML);
