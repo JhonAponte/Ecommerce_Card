@@ -60,6 +60,7 @@ function ActualizarHtml(){
         code += CodeHtml(index);
     }
     container.innerHTML = code;
+    console.log("Ya actualizamos el HTML");
 }
 
 function CodeHtml(i){
@@ -123,6 +124,10 @@ async function recibirProductos(){
 
 async function cargaInicialHTML(){
     try {
+        console.log("Esto es una prueba");
+        sleep(3000);
+        console.log("Esta es la segunda parte de la prueba");
+        sleep(2000);
         const todo = await Promise.all([recibirCategorias(),recibirProductos()]);
         categoria = todo[0];
         listado = todo[1];
@@ -136,6 +141,15 @@ async function cargaInicialHTML(){
     } catch(err) {
         alert(err);
     }
+}
+
+function sleep(ms) {
+    return new Promise (function (resolve, reject){
+        setTimeout(() => {
+            console.log("Terminó el timer", ms);
+            resolve();
+        } , ms);
+    })
 }
 
 document.addEventListener("DOMContentLoaded", cargaInicialHTML);
