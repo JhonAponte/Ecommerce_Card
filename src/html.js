@@ -1,12 +1,9 @@
 import { recibirCategorias, recibirProductos} from "./getData.js"; 
-import { Product } from "./class.js";
-
-var container = document.getElementById("contenedor");
+import { ActualizarHtml} from "./actualizarHtml.js"; 
 
 export var tipo;
 export var listado;
 export var categoria;
-var item;
 
 export async function cargaInicialHTML(){
     try {
@@ -29,42 +26,6 @@ export async function cargaInicialHTML(){
     }
 }
 
-export function ActualizarHtml(){
-        var code = "";
-        for(let index in listado){
-            code += CodeHtml(index);
-        }
-        container.innerHTML = code;
-}
 
-export function CodeHtml(i){
-    item = new Product(listado[i].photo, listado[i].clothes, listado[i].description, listado[i].stars, listado[i].price, listado[i].discount);
-    var portionHtml = `
-        <div class="container">
-            <img src= "${item.photo}" alt="${item.clothes}" class="card-img">
-            <h1 class="name">${item.clothes}</h1>
-            <p class="description">${item.description}</p>
-            <div class="star">${Qualifier(item.stars)}</div>
-            <br>
-            <h5>${item.price} &emsp;<strike>${item.discount}</strike></h5>
-            <br>
-            <button class="btn">Comprar</button>
-        </div>`;
-    
-        return portionHtml;
-}
 
-export function Qualifier(stars){
-        var qualification = "";
-        for(let i = 1; i <= stars; i++){
-            qualification += "<i class='bi bi-star-fill'></i>";
-        }
-        if(stars <5){
-            for(let j = 1; j <= 5 - stars; j++){
-                qualification += "<i class='bi bi-star-fill grey'></i>";
-            }
-        
-        }
-        
-        return qualification;
-}
+

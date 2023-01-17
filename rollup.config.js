@@ -5,7 +5,7 @@ export default {
   input: "src/main.js",
   output:{
 		file: "bundle.mini.js",
-		format: "cjs"
+		format: "iife"
 	},
   plugins: [
 	terser()
