@@ -1,0 +1,30 @@
+{
+  "devDependencies": {
+    "@ampproject/rollup-plugin-closure-compiler": "^0.27.0",
+    "@rollup/plugin-terser": "^0.3.0",
+    "@yushijinhun/three-minifier-rollup": "^0.4.0",
+    "rollup": "^3.10.0",
+    "rollup-plugin-babel-minify": "^10.0.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-your-function": "^0.4.9",
+    "terser": "^5.16.1"
+  },
+  "type": "module",
+  "name": "ecommerce_class",
+  "version": "1.0.0",
+  "description": "ecommerce_class",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JhonAponte/Ecommerce_CArd.git"
+  },
+  "author": "Jonathan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JhonAponte/Ecommerce_CArd/issues"
+  },
+  "homepage": "https://github.com/JhonAponte/Ecommerce_CArd#readme"
+}
