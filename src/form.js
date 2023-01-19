@@ -1,5 +1,4 @@
-import { listado } from "./html.js";
-import { ActualizarHtml} from "./actualizarHtml.js"; 
+import { ActualizarHtml, listado} from "./codigoHTML.js"; 
 import { ObtenerDatosFormulario} from "./getForm.js"; 
 import { LimpiarDatos} from "./deleteForm.js"; 
 

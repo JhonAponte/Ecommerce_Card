@@ -1,6 +1,32 @@
 (function () {
     'use strict';
 
+    function Qualifier(stars){
+        var qualification = "";
+        for(let i = 1; i <= stars; i++){
+            qualification += "<i class='bi bi-star-fill'></i>";
+        }
+        if(stars <5){
+            for(let j = 1; j <= 5 - stars; j++){
+                qualification += "<i class='bi bi-star-fill grey'></i>";
+            }
+        
+        }
+        
+        return qualification;
+    }
+
+    class Product {
+        constructor(photo, clothes, description, stars, price, discount) {
+          this.photo = photo;
+          this.clothes = clothes;
+          this.description = description;
+          this.stars = stars;
+          this.price = price;
+          this.discount = discount;
+        }
+    }
+
     async function recibirCategorias(){
         try {
             const categorias_obtenidas = await fetch("https://raw.githubusercontent.com/JhonAponte/Ecommerce_Card/json/categorias.json");
@@ -21,33 +47,38 @@
         }
     }
 
-    class Product {
-        constructor(photo, clothes, description, stars, price, discount) {
-          this.photo = photo;
-          this.clothes = clothes;
-          this.description = description;
-          this.stars = stars;
-          this.price = price;
-          this.discount = discount;
-        }
-    }
-
-    function Qualifier(stars){
-        var qualification = "";
-        for(let i = 1; i <= stars; i++){
-            qualification += "<i class='bi bi-star-fill'></i>";
-        }
-        if(stars <5){
-            for(let j = 1; j <= 5 - stars; j++){
-                qualification += "<i class='bi bi-star-fill grey'></i>";
-            }
-        
-        }
-        
-        return qualification;
-    }
+    var tipo;
+    var listado;
 
     var item;
+    var categoria;
+
+    var container = document.getElementById("contenedor");
+
+    function ActualizarHtml(){
+        var code = "";
+        for(let index in listado){
+            code += CodeHtml(index);
+        }
+        container.innerHTML = code;
+    }
+
+    async function cargaInicialHTML(){
+        try {
+            const todo = await Promise.all([recibirCategorias(),recibirProductos()]);
+            categoria = todo[0];
+            listado = todo[1];
+            for (const parametro in categoria) {
+                tipo = categoria[parametro];
+            }
+            for (let i = 0; i < 8; i++) {
+                listado[i].clothes = tipo[i];
+            }
+            ActualizarHtml();
+        } catch(err) {
+            alert(err);
+        }
+    }
 
     function CodeHtml(i){
         item = new Product(listado[i].photo, listado[i].clothes, listado[i].description, listado[i].stars, listado[i].price, listado[i].discount);
@@ -66,45 +97,9 @@
             return portionHtml;
     }
 
-    var container = document.getElementById("contenedor");
-
-    function ActualizarHtml(){
-        var code = "";
-        for(let index in listado){
-            code += CodeHtml(index);
-        }
-        container.innerHTML = code;
-    }
-
-    var tipo;
-    var listado;
-    var categoria;
-
-    async function cargaInicialHTML(){
-        try {
-            // console.log("Esto es una prueba");
-            // sleep(3000);
-            // console.log("Esta es la segunda parte de la prueba");
-            // sleep(2000);
-            const todo = await Promise.all([recibirCategorias(),recibirProductos()]);
-            categoria = todo[0];
-            listado = todo[1];
-            for (const parametro in categoria) {
-                tipo = categoria[parametro];
-            }
-            for (let i = 0; i < 8; i++) {
-                listado[i].clothes = tipo[i];
-            }
-            ActualizarHtml();
-        } catch(err) {
-            alert(err);
-        }
-    }
-
     function ObtenerDatosFormulario(){
         const inputs = document.querySelectorAll("#Formulario input");
         const FormData = {};
-
         const id_photo = document.querySelector('#imagen').selectedIndex;
         const txt_photo = document.querySelector('#imagen').options;
         const name_photo = document.querySelector('#imagen').name;

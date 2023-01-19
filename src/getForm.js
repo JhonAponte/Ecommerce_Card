@@ -1,9 +1,8 @@
-import { tipo } from "./html.js";
+import { tipo } from "./codigoHTML.js";
 
 export function ObtenerDatosFormulario(){
     const inputs = document.querySelectorAll("#Formulario input");
     const FormData = {};
-
     const id_photo = document.querySelector('#imagen').selectedIndex;
     const txt_photo = document.querySelector('#imagen').options;
     const name_photo = document.querySelector('#imagen').name;

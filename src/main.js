@@ -1,4 +1,4 @@
-import { cargaInicialHTML } from "./html.js";
+import { cargaInicialHTML } from "./codigoHTML.js";
 import { RegistrarDatos } from "./form.js";
 
 var selector_1 = document.getElementById("imagen");
