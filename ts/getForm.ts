@@ -13,7 +13,7 @@ export type FormDataType = {
     clothes: string
 }
 
-export function ObtenerDatosFormulario(){
+export function ObtenerDatosFormulario():FormDataType{
     // const inputs = document.querySelectorAll("#Formulario input") as unknown as HTMLInputElement;
 
     const description = document.getElementById("description") as HTMLInputElement;
