@@ -16,6 +16,31 @@ body {
   color: #000000;
 }
 
+
+.bi-bag {
+  margin-right: 20px;
+  margin-left: 710px;
+}
+
+.count-products{
+  position: absolute;
+  top: 55%;
+  right: 0;
+  margin-right: 30px;
+  margin-left: 780px;
+  margin-top: -2px;
+
+  background-color: #000;
+  color: #fff;
+  width: 20px;
+  height: 20px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
 .wrapper-flex {
   display: flex;
   flex-wrap: wrap;
@@ -51,17 +76,48 @@ body {
 }
 
 .btn {
-  width: 100%;
+  width: 112%;
   border: none;
   font-size: 1rem;
   font-weight: bold;
   color: white;
   padding: 1rem;
   background-color: #1f53c5;
+  margin-left: -15px;
 }
 .btn:hover {
   background-color: #050349;
   color: rgb(255, 255, 255);
+}
+
+.quantify {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 2px;
+}
+
+.quantify .btn {
+  font-size: 12px;
+}
+
+.quantify input {
+  margin-right: 27px;
+  margin-left: 11px;
+  align-content: center;
+  text-align: center;
+}
+
+.btn-outline-primary{
+  width: 15px;
+  text-align: auto;
+  align-content: center;
+}
+
+.btn-outline-secondary{
+  width: 15px;
+  text-align: center;
+  align-content: center;
 }
 
 .bi-star-fill {

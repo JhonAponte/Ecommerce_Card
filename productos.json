@@ -4,55 +4,95 @@
         "description":"Lorem ipsum dolor sit amet.", 
         "stars":3, 
         "price":"3.200 Bs", 
-        "discount": "3.550 Bs"
+        "discount": "3.550 Bs",
+        "sold": 20,
+        "colors": 5,
+        "delivery": "gratis",
+        "characteristics": "Franelas de tela de algodón egipcio con cuello en V, suaves al tacto y muy elásticas.",
+        "payment": "TDC, TDB, Paypal"
     },
     { 
         "photo":"image/converse.jpg", 
         "description":"Lorem ipsum dolor sit amet.", 
         "stars":5, 
         "price":"8.000 Bs", 
-        "discount": "7.000 Bs" 
+        "discount": "7.000 Bs",
+        "sold": 35,
+        "colors": 8,
+        "delivery": "gratis",
+        "characteristics": "Botas de suela de caucho de color blanco, con cordones lisos, de corte alto, hechas de tela de lona. Plantilla incluida",
+        "payment": "TDC, TDB, Paypal, AirTM" 
     },
     { 
         "photo":"image/gorra.jpg", 
         "description":"Lorem ipsum dolor sit amet.", 
         "stars":2, 
         "price":"3.000 Bs", 
-        "discount": "4.000 Bs" 
+        "discount": "4.000 Bs",
+        "sold": 25,
+        "colors": 11,
+        "delivery": "costo comprador",
+        "characteristics": "Gorra de tela de poliester, de talla ajustable, facil lavado, con su logo estampado y muy duraderas.",
+        "payment": "TDB, Paypal, Binance"  
     },
     { 
         "photo":"image/medias.png", 
         "description":"Lorem ipsum dolor sit amet.", 
         "stars":1, 
         "price":"1.280 Bs", 
-        "discount": "1.600 Bs" 
+        "discount": "1.600 Bs",
+        "sold": 3,
+        "colors": 2,
+        "delivery": "a convenir",
+        "characteristics": "Tela de 50% poliester y 50% algodón de ajuste medio, faciles de lavar y duraderas.",
+        "payment": "TDB, Paypal, Binance"  
     },
     { 
         "photo":"image/chaleco.png", 
         "description":"Lorem ipsum dolor sit amet.", 
         "stars":4, 
         "price":"800 Bs", 
-        "discount": "1.000 Bs"
+        "discount": "1.000 Bs",
+        "sold": 5,
+        "colors": 4,
+        "delivery": "gratis",
+        "characteristics": "Prenda totalmente tejida a mano en algodón teñido. Cuello ajustado. Manga larga.",
+        "payment": "TDB, Paypal, Efectivo, Transferencia." 
     },
     { 
         "photo":"image/botas.jpg", 
         "description":"Lorem ipsum dolor sit amet.", 
         "stars":3, 
         "price":"2.800 Bs", 
-        "discount": "3.200 Bs"
+        "discount": "3.200 Bs",
+        "sold": 32,
+        "colors": 3,
+        "delivery": "gratis",
+        "characteristics": "Botas multicolor de semicuero, con suela de caucho de color negro, cosido a mano, hecho en por artesanos locales.",
+        "payment": "TDB, Paypal, Binance, AirTM" 
     },
     { 
         "photo":"image/camisa.jpg", 
         "description":"Lorem ipsum dolor sit amet.", 
         "stars":5, 
         "price":"2450 Bs", 
-        "discount": "3100 Bs" 
+        "discount": "3100 Bs",
+        "sold": 10,
+        "colors": 5,
+        "delivery": "costo comprador",
+        "characteristics": "Elaboradas en Algodon Egipcio. Vendemos tanto al mayor como al detal. Fabricamos desde talla SS hasta XL.",
+        "payment": "TDC, TDB, Paypal"  
     },
     { 
         "photo":"image/corbata.png", 
         "description":"Lorem ipsum dolor sit amet.", 
         "stars":4, 
         "price":"800 Bs", 
-        "discount": "950 Bs" 
+        "discount": "950 Bs",
+        "sold": 12,
+        "colors": 7,
+        "delivery": "a convenir",
+        "characteristics": "Corbatas microfibra de muy buena calidad. Hermosas corbatas, ideal para un regalo especial. Nuestras Corbatas le darán ese toque de elegancia y categoría que busca para ese evento especial.",
+        "payment": "TDC, TDB, Paypal, Efectivo."   
     }
 ]

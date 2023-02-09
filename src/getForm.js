@@ -3,9 +3,12 @@ import { tipo } from "./codigoHTML.js";
 export function ObtenerDatosFormulario(){
     const inputs = document.querySelectorAll("#Formulario input");
     const FormData = {};
-    const id_photo = document.querySelector('#imagen').selectedIndex;
-    const txt_photo = document.querySelector('#imagen').options;
-    const name_photo = document.querySelector('#imagen').name;
+
+    const selector = document.querySelector('#imagen');
+
+    const id_photo = selector.selectedIndex;
+    const txt_photo = selector.options;
+    const name_photo = selector.name;
 
     FormData[name_photo] = txt_photo[id_photo].text;
 
@@ -14,5 +17,6 @@ export function ObtenerDatosFormulario(){
     }
 
     FormData.clothes=tipo[id_photo-1];
+    
     return FormData;
 }

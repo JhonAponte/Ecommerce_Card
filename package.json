@@ -30,6 +30,7 @@
   },
   "homepage": "https://github.com/JhonAponte/Ecommerce_CArd#readme",
   "dependencies": {
+    "bootstrap": "^5.3.0-alpha1",
     "tslib": "^2.4.1"
   }
 }
