@@ -45,7 +45,8 @@
         "colors": 2,
         "delivery": "a convenir",
         "characteristics": "Tela de 50% poliester y 50% algodón de ajuste medio, faciles de lavar y duraderas.",
-        "payment": "TDB, Paypal, Binance"  
+        "payment": "TDB, Paypal, Binance",
+        "id": 333
     },
     { 
         "photo":"image/chaleco.png", 
@@ -57,7 +58,8 @@
         "colors": 4,
         "delivery": "gratis",
         "characteristics": "Prenda totalmente tejida a mano en algodón teñido. Cuello ajustado. Manga larga.",
-        "payment": "TDB, Paypal, Efectivo, Transferencia." 
+        "payment": "TDB, Paypal, Efectivo, Transferencia.",
+        "id": 353
     },
     { 
         "photo":"image/botas.jpg", 
@@ -69,7 +71,8 @@
         "colors": 3,
         "delivery": "gratis",
         "characteristics": "Botas multicolor de semicuero, con suela de caucho de color negro, cosido a mano, hecho en por artesanos locales.",
-        "payment": "TDB, Paypal, Binance, AirTM" 
+        "payment": "TDB, Paypal, Binance, AirTM",
+        "id": 543
     },
     { 
         "photo":"image/camisa.jpg", 
@@ -81,7 +84,8 @@
         "colors": 5,
         "delivery": "costo comprador",
         "characteristics": "Elaboradas en Algodon Egipcio. Vendemos tanto al mayor como al detal. Fabricamos desde talla SS hasta XL.",
-        "payment": "TDC, TDB, Paypal"  
+        "payment": "TDC, TDB, Paypal",
+        "id": 532
     },
     { 
         "photo":"image/corbata.png", 
@@ -93,6 +97,7 @@
         "colors": 7,
         "delivery": "a convenir",
         "characteristics": "Corbatas microfibra de muy buena calidad. Hermosas corbatas, ideal para un regalo especial. Nuestras Corbatas le darán ese toque de elegancia y categoría que busca para ese evento especial.",
-        "payment": "TDC, TDB, Paypal, Efectivo."   
+        "payment": "TDC, TDB, Paypal, Efectivo.",
+        "id": 732   
     }
 ]
