@@ -9,7 +9,8 @@
         "colors": 5,
         "delivery": "gratis",
         "characteristics": "Franelas de tela de algodón egipcio con cuello en V, suaves al tacto y muy elásticas.",
-        "payment": "TDC, TDB, Paypal"
+        "payment": "TDC, TDB, Paypal",
+        "id": 353
     },
     { 
         "photo":"image/converse.jpg", 
@@ -21,7 +22,8 @@
         "colors": 8,
         "delivery": "gratis",
         "characteristics": "Botas de suela de caucho de color blanco, con cordones lisos, de corte alto, hechas de tela de lona. Plantilla incluida",
-        "payment": "TDC, TDB, Paypal, AirTM" 
+        "payment": "TDC, TDB, Paypal, AirTM",
+        "id": 683
     },
     { 
         "photo":"image/gorra.jpg", 
@@ -33,7 +35,8 @@
         "colors": 11,
         "delivery": "costo comprador",
         "characteristics": "Gorra de tela de poliester, de talla ajustable, facil lavado, con su logo estampado y muy duraderas.",
-        "payment": "TDB, Paypal, Binance"  
+        "payment": "TDB, Paypal, Binance",
+        "id": 865  
     },
     { 
         "photo":"image/medias.png", 
