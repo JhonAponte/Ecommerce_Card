@@ -10,7 +10,8 @@
         "delivery": "gratis",
         "characteristics": "Franelas de tela de algodón egipcio con cuello en V, suaves al tacto y muy elásticas.",
         "payment": "TDC, TDB, Paypal",
-        "id": 353
+        "id": 353,
+        "modelproduct": "XL3425"
     },
     { 
         "photo":"image/converse.jpg", 
@@ -23,7 +24,8 @@
         "delivery": "gratis",
         "characteristics": "Botas de suela de caucho de color blanco, con cordones lisos, de corte alto, hechas de tela de lona. Plantilla incluida",
         "payment": "TDC, TDB, Paypal, AirTM",
-        "id": 683
+        "id": 683,
+        "modelproduct": "HY3498"
     },
     { 
         "photo":"image/gorra.jpg", 
@@ -36,7 +38,8 @@
         "delivery": "costo comprador",
         "characteristics": "Gorra de tela de poliester, de talla ajustable, facil lavado, con su logo estampado y muy duraderas.",
         "payment": "TDB, Paypal, Binance",
-        "id": 865  
+        "id": 865,
+        "modelproduct": "RUT643"  
     },
     { 
         "photo":"image/medias.png", 
@@ -49,7 +52,8 @@
         "delivery": "a convenir",
         "characteristics": "Tela de 50% poliester y 50% algodón de ajuste medio, faciles de lavar y duraderas.",
         "payment": "TDB, Paypal, Binance",
-        "id": 333
+        "id": 333,
+        "modelproduct": "PTR86"
     },
     { 
         "photo":"image/chaleco.png", 
@@ -62,7 +66,8 @@
         "delivery": "gratis",
         "characteristics": "Prenda totalmente tejida a mano en algodón teñido. Cuello ajustado. Manga larga.",
         "payment": "TDB, Paypal, Efectivo, Transferencia.",
-        "id": 353
+        "id": 353,
+        "modelproduct": "XT325"
     },
     { 
         "photo":"image/botas.jpg", 
@@ -75,7 +80,8 @@
         "delivery": "gratis",
         "characteristics": "Botas multicolor de semicuero, con suela de caucho de color negro, cosido a mano, hecho en por artesanos locales.",
         "payment": "TDB, Paypal, Binance, AirTM",
-        "id": 543
+        "id": 543,
+        "modelproduct": "XUI25"
     },
     { 
         "photo":"image/camisa.jpg", 
@@ -88,7 +94,8 @@
         "delivery": "costo comprador",
         "characteristics": "Elaboradas en Algodon Egipcio. Vendemos tanto al mayor como al detal. Fabricamos desde talla SS hasta XL.",
         "payment": "TDC, TDB, Paypal",
-        "id": 532
+        "id": 532,
+        "modelproduct": "SZG35"
     },
     { 
         "photo":"image/corbata.png", 
@@ -101,6 +108,7 @@
         "delivery": "a convenir",
         "characteristics": "Corbatas microfibra de muy buena calidad. Hermosas corbatas, ideal para un regalo especial. Nuestras Corbatas le darán ese toque de elegancia y categoría que busca para ese evento especial.",
         "payment": "TDC, TDB, Paypal, Efectivo.",
-        "id": 732   
+        "id": 732,
+        "modelproduct": "XLI985"   
     }
 ]
