@@ -24,7 +24,7 @@
         "sold": 35,
         "colors": 8,
         "delivery": "gratis",
-        "characteristics": "Botas de suela de caucho de color blanco, con cordones lisos, de corte alto, hechas de tela de lona. Plantilla incluida",
+        "characteristics": "Botas de suela de caucho de color blanco, con cordones lisos y corte alto",
         "payment": "TDC, TDB, Paypal, AirTM",
         "id": 683,
         "modelproduct": "HY3498"
@@ -39,7 +39,7 @@
         "sold": 25,
         "colors": 11,
         "delivery": "costo comprador",
-        "characteristics": "Gorra de tela de poliester, de talla ajustable, facil lavado, con su logo estampado y muy duraderas.",
+        "characteristics": "Gorra de tela de poliester, talla ajustable, de facil lavado y logo estampado.",
         "payment": "TDB, Paypal, Binance",
         "id": 865,
         "modelproduct": "RUT643"  
@@ -84,7 +84,7 @@
         "sold": 32,
         "colors": 3,
         "delivery": "gratis",
-        "characteristics": "Botas multicolor de semicuero, con suela de caucho de color negro, cosido a mano, hecho en por artesanos locales.",
+        "characteristics": "Botas multicolor de semicuero, con suela de caucho de color negro, cosido a mano.",
         "payment": "TDB, Paypal, Binance, AirTM",
         "id": 543,
         "modelproduct": "XUI25"
@@ -99,7 +99,7 @@
         "sold": 10,
         "colors": 5,
         "delivery": "costo comprador",
-        "characteristics": "Elaboradas en Algodon Egipcio. Vendemos tanto al mayor como al detal. Fabricamos desde talla SS hasta XL.",
+        "characteristics": "Elaboradas en Algodon Egipcio. Fabricamos desde talla SS hasta XL.",
         "payment": "TDC, TDB, Paypal",
         "id": 532,
         "modelproduct": "SZG35"
@@ -114,7 +114,7 @@
         "sold": 12,
         "colors": 7,
         "delivery": "a convenir",
-        "characteristics": "Corbatas microfibra de muy buena calidad. Hermosas corbatas, ideal para un regalo especial. Nuestras Corbatas le darán ese toque de elegancia y categoría que busca para ese evento especial.",
+        "characteristics": "Corbatas de microfibra de buena calidad. Corbatas que le darán un toque de elegancia.",
         "payment": "TDC, TDB, Paypal, Efectivo.",
         "id": 732,
         "modelproduct": "XLI985"   
