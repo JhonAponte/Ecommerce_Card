@@ -2,6 +2,7 @@
     { 
         "photo":"image/franela.jpg", 
         "description":"Lorem ipsum dolor sit amet.", 
+        "product": "Franela deportiva para caballeros",
         "stars":3, 
         "price":"3.200 Bs", 
         "discount": "3.550 Bs",
@@ -15,6 +16,7 @@
     },
     { 
         "photo":"image/converse.jpg", 
+        "product": "Botas converse para caballeros",
         "description":"Lorem ipsum dolor sit amet.", 
         "stars":5, 
         "price":"8.000 Bs", 
@@ -29,6 +31,7 @@
     },
     { 
         "photo":"image/gorra.jpg", 
+        "product": "Gorra deportiva",
         "description":"Lorem ipsum dolor sit amet.", 
         "stars":2, 
         "price":"3.000 Bs", 
@@ -43,6 +46,7 @@
     },
     { 
         "photo":"image/medias.png", 
+        "product": "Medias deportivas para caballeros",
         "description":"Lorem ipsum dolor sit amet.", 
         "stars":1, 
         "price":"1.280 Bs", 
@@ -57,6 +61,7 @@
     },
     { 
         "photo":"image/chaleco.png", 
+        "product": "Chaleco casual para caballeros",
         "description":"Lorem ipsum dolor sit amet.", 
         "stars":4, 
         "price":"800 Bs", 
@@ -71,6 +76,7 @@
     },
     { 
         "photo":"image/botas.jpg", 
+        "product": "Botas deportivas para caballeros",
         "description":"Lorem ipsum dolor sit amet.", 
         "stars":3, 
         "price":"2.800 Bs", 
@@ -85,6 +91,7 @@
     },
     { 
         "photo":"image/camisa.jpg", 
+        "product": "Camisa casual para caballeros",
         "description":"Lorem ipsum dolor sit amet.", 
         "stars":5, 
         "price":"2450 Bs", 
@@ -99,6 +106,7 @@
     },
     { 
         "photo":"image/corbata.png", 
+        "product": "Corbata de seda",
         "description":"Lorem ipsum dolor sit amet.", 
         "stars":4, 
         "price":"800 Bs", 
